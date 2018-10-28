@@ -6,8 +6,19 @@ import (
 	"unsafe"
 )
 
-func main1() {
-	test4()
+func main() {
+	test5()
+}
+
+func test5() {
+	var x float64 = 3.4
+	fmt.Println("x = ", x)
+	p := reflect.ValueOf(&x) // 注意:得到X的地址 fmt.Println("type of p:", p.Type()) fmt.Println("settability of p:" , p.CanSet())
+	v := p.Elem()
+	fmt.Println("settability of v:", v.CanSet())
+	v.SetFloat(7.1)
+	fmt.Println(v.Interface())
+	fmt.Println("x = ", x)
 }
 
 func test4() {
