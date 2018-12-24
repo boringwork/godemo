@@ -13,6 +13,7 @@ type ActivityOnDestroy interface {
 }
 
 type MainActivity struct {
+	Render func()
 }
 
 func (me *MainActivity) OnCreate() {
@@ -21,4 +22,5 @@ func (me *MainActivity) OnCreate() {
 
 func (me *MainActivity) OnDestroy() {
 	fmt.Println("MainActivity OnDestroy")
+
 }

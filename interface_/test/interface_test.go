@@ -1,13 +1,18 @@
 package test
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/boringwork/godemo/interface_"
 )
 
 func TestInterface(t *testing.T) {
-	mainAct := &interface_.MainActivity{}
+	mainAct := &interface_.MainActivity{
+		Render: func() {
+			fmt.Println("render widget")
+		},
+	}
 
 	OnCreate, ok := interface{}(mainAct).(interface_.ActivityOnCreate)
 	if ok {
@@ -22,4 +27,6 @@ func TestInterface(t *testing.T) {
 	} else {
 		t.Fail()
 	}
+
+	mainAct.Render()
 }

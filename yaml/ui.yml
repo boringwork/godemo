@@ -1,0 +1,19 @@
+import:
+  - gitlab.com/mustodo/tenon/ui"
+  - gitlab.com/mustodo/tenon/app"
+
+Layout: {
+  Widget: ui.Box,
+  Width: 100%,
+  Height: 200px,
+  Align: ui.Center|ui.Left,
+  Padding: [10, 10, 10, 10],
+  Margin: {Top: 10, Bottom: 20},
+  Children: [
+    {
+      Widget: ui.Box,
+      Width: 100%,
+      Height: 200px,
+    },
+  ],
+}
