@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/mustodo/tml"
 	yaml "gopkg.in/yaml.v2"
 )
 
@@ -32,6 +33,24 @@ Layout: {
 
 type Artx struct {
 	Import []string
+}
+
+func TestTml(t *testing.T) {
+	a := make(map[string]interface{}, 1)
+
+	tml.UnmarshalStrict([]byte(template), &a)
+
+	for k, v := range a {
+		fmt.Printf("%T ", v)
+		fmt.Println(k, ":", v)
+
+		if m, ok := v.(map[string]interface{}); ok {
+			for k1, v1 := range m {
+				fmt.Printf("%T ", v1)
+				fmt.Println(k1, ":", v1)
+			}
+		}
+	}
 }
 
 func TestYaml(t *testing.T) {
