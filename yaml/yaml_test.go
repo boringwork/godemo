@@ -10,8 +10,8 @@ import (
 
 var template = `
 import:
-  - gitlab.com/mustodo/tenon/ui"
-  - gitlab.com/mustodo/tenon/app"
+  - gitlab.com/mustodo/tenon/ui
+  - gitlab.com/mustodo/tenon/app
 
 Layout: {
   Widget: ui.Box,
