@@ -1,8 +1,9 @@
-package main
+package reflect4
 
 import (
 	"fmt"
 	"reflect"
+	"testing"
 )
 
 type People interface {
@@ -24,7 +25,7 @@ func (me *Mine) Study() {
 	fmt.Println("Mine.Study")
 }
 
-func main() {
+func TestReflect(t *testing.T) {
 	appnil := (*Mine)(nil)
 
 	appType := reflect.TypeOf(appnil)

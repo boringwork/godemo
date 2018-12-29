@@ -39,8 +39,8 @@ func main() {
 		panic(err)
 	}
 	surface.FillRect(nil, 0)
-	rect := sdl.Rect{0, 0, 200, 200}
-	surface.FillRect(&rect, 0xffff0000)
+	rect := sdl.Rect{0, 0, 800, 600}
+	surface.FillRect(&rect, 0xffffffff)
 	window.UpdateSurface()
 
 	for {
@@ -69,12 +69,12 @@ func initCairo(sdlSurface *sdl.Surface) {
 	// surface := cairo.NewSurface(cairo.FORMAT_ARGB32, 440, 80)
 	surface := NewSurfaceFromSDL(sdlSurface)
 	surface.SelectFontFace("Consolas", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
-	surface.SetFontSize(24.0)
+	surface.SetFontSize(15.0)
 	surface.SetSourceRGB(0.2, 0.5, 0.1)
 	// surface.SetSourceRGB(0.2*255, 0.5*255, 0.1*255)
 	surface.MoveTo(10.0, 50.0)
 	surface.ShowText("Hello World")
-	surface.WriteToPNG("hello.png")
+	// surface.WriteToPNG("hello.png")
 	surface.Flush()
 	// surface.Finish()
 }
@@ -108,7 +108,7 @@ func NewSurfaceFromSDL(surface *sdl.Surface) *cairo.Surface {
 
 	/* Make the target point to either the SDL_Surface's data itself
 	 * or a shadow image surface if we need to unpremultiply pixels. */
-	if format == cairo.FORMAT_RGB24 {
+	if true || format == cairo.FORMAT_RGB24 {
 		/* The caller is expected to have locked the surface (_if_ it
 		 * needs locking) so that sdl_surface->pixels is valid and
 		 * constant for the lifetime of the cairo_surface_t.  However,

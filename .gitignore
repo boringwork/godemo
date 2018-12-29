@@ -1,5 +1,9 @@
 .DS_Store
 /interface_/test/debug.test
-/cairo/cairo.exe
-/cairo/hello.png
+cairo/glfw/glfw
+cairo/sdl/sdl
+opengl/opengl
+window/glfw/glfw
+window/sdl/sdl
+/cairo/sdl/hello.png
 *.exe
