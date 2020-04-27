@@ -4,6 +4,7 @@ import (
 	"go/ast"
 	"go/parser"
 	"go/token"
+	"log"
 	"testing"
 )
 
@@ -21,7 +22,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
+	log.Fatal()
 	// Print the AST.
 	ast.Print(fset, f)
 

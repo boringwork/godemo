@@ -1,0 +1,37 @@
+package main
+
+func main() {
+	// // fmt.Println("renderFrame")
+	// width := js.Global().Get("innerWidth").Int()
+	// println("renderFrame ", width)
+	// r := js.Global().Get("requestAnimationFrame")
+	// fmt.Println(r)
+	// height := js.Global().Get("innerHeight").Int()
+	// println("renderFrame ", width, height)
+	// doc = js.Global().Get("document")
+	// canvasEl = doc.Call("getElementById", "mycanvas")
+	// canvasEl.Call("setAttribute", "width", width)
+	// canvasEl.Call("setAttribute", "height", height)
+	// canvasEl.Set("tabIndex", 0) // Not sure if this is needed
+	// ctx = canvasEl.Call("getContext", "2d")
+	// js.Global().Call("requestAnimationFrame", js.Global().Get("renderFrame"))
+
+	println("go code main")
+	// js.Global().Set("addValues", js.FuncOf(add))
+	// js.Global().Set("subValues", js.FuncOf(sub))
+}
+
+// func add(this js.Value, args []js.Value) interface{} {
+// 	println("go code add")
+// 	// v1 := js.Global().Get("document").Call("getElementById", "num1").Get("value").String()
+// 	// v2 := js.Global().Get("document").Call("getElementById", "num2").Get("value").String()
+// 	// println("nu1 ", v1, "  num2 ", v2)
+// 	return nil
+// }
+
+// func sub(this js.Value, args []js.Value) interface{} {
+// 	// v1 := js.Global().Get("document").Call("getElementById", "num1").Get("value").String()
+// 	// v2 := js.Global().Get("document").Call("getElementById", "num2").Get("value").String()
+// 	// println("nu1 ", v1, "  num2 ", v2)
+// 	return nil
+// }

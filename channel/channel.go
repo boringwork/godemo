@@ -20,8 +20,14 @@ func Count() {
 }
 
 func main() {
+	test()
+
+	if true {
+		return
+	}
+
 	fmt.Println("start....")
-	ch = make(chan int)
+	ch = make(chan int, 1)
 	go Count()
 
 	//fmt.Println("main 1")
@@ -34,4 +40,24 @@ func main() {
 	<-ch
 	time.Sleep(2 * time.Second)
 	fmt.Println("main 4", "ch = ", ch)
+}
+
+func test() {
+	ch := make(chan int, 8)
+
+	go func() {
+		for {
+			time.Sleep(3 * time.Second)
+			fmt.Print("number ")
+			i := <-ch
+			fmt.Printf("i = %d\n", i)
+		}
+	}()
+
+	for i := 0; i != 10; i++ {
+		fmt.Println("发送 ", i)
+		ch <- i
+	}
+
+	fmt.Println("end")
 }
