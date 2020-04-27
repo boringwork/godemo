@@ -13,6 +13,7 @@ import (
 	"log"
 	"os"
 	"runtime"
+	"time"
 
 	"github.com/go-gl/gl/v2.1/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
@@ -53,6 +54,7 @@ func main() {
 
 	setupScene()
 	for !window.ShouldClose() {
+		time.Sleep(10 * time.Millisecond)
 		drawScene()
 		window.SwapBuffers()
 		glfw.PollEvents()
